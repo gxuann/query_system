@@ -4,17 +4,17 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 
 public class UserUtil {
-	public static String getUserName(HttpServletRequest request) {
-		String username  = null;
+	public static String getuname(HttpServletRequest request) {
+		String uname  = null;
 		Cookie[] c = request.getCookies();
 		if(c!= null) {
 			for(int  i=0; i<c.length; i++) {
-				if(c[i].getName().equals("username")){
-					username = c[i].getValue();
+				if(c[i].getName().equals("uname")){
+					uname = c[i].getValue();
 				}
 			}
 		}
-		return username;
+		return uname;
 	}
 	public static String getRid(HttpServletRequest request) {
 		String rid  = null;

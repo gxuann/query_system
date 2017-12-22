@@ -53,10 +53,10 @@ public class Login extends HttpServlet {
 				response.addCookie(c1);
 				if(rid==1) {
 					out.print("登录成功，欢迎你管理员");
-					response.addHeader("refresh", "1;url=admin.html");
+					response.addHeader("refresh", "1;url=admin/index.jsp");
 				} else if(rid==2) {
 					out.print("登录成功，欢迎你用户");
-					response.addHeader("refresh", "1;url=index.html");
+					response.addHeader("refresh", "1;url=user/index.jsp");
 				}
 			} else {
 				out.print("<script>alert(\"用户名密码错误！\");</script>");
