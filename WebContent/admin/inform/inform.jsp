@@ -13,5 +13,6 @@
 String uname = UserUtil.getuname(request);
 out.print(uname);
 %>
+<a href="/Logout">注销</a>
 </body>
 </html>

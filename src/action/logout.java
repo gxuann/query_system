@@ -3,8 +3,8 @@ package action;
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -34,9 +34,8 @@ public class Logout extends HttpServlet {
 		Cookie c1 = new Cookie("rid", null);
 		c1.setMaxAge(0);
 		response.addCookie(c1);
-		response.sendRedirect("index.jsp");
-		
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		response.sendRedirect("login.html");
+
 	}
 
 	/**
