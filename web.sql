@@ -20,4 +20,6 @@ rid int references roles(r_id),
 insert into users values('xiaoming','123456',1)
 insert into users values('xiaohong','123456',2)
 
+delete from users where rid=2
+ 
 select * from users
