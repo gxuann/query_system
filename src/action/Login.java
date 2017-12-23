@@ -52,10 +52,8 @@ public class Login extends HttpServlet {
 				Cookie c1 = new Cookie("uname", uname);
 				response.addCookie(c1);
 				if(rid==1) {
-					out.print("登录成功，欢迎你管理员");
 					response.addHeader("refresh", "1;url=admin/index.jsp");
 				} else if(rid==2) {
-					out.print("登录成功，欢迎你用户");
 					response.addHeader("refresh", "1;url=user/index.jsp");
 				}
 			} else {

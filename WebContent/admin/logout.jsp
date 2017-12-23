@@ -8,9 +8,11 @@
     <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
+<div class="col-xs-4">
 <h1>已完成工作？</h1>
-<form action="Logout" method="post">
-<button type="submit" class="btn btn-success btn-block">退出</button>
+<form action="${pageContext.request.contextPath}/Logout" method="post">
+<button type="submit" class="btn btn-danger btn-block" onclick="javascript:top.location='../login.html';">退出</button>
 </form>
+</div>
 </body>
 </html>
