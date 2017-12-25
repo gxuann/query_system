@@ -1,5 +1,6 @@
-
-<!DOCTYPE html>
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="zh-CN">
   <head>
     <meta charset="utf-8">
@@ -15,7 +16,8 @@
     <link href="css/login.css" rel="stylesheet">
     <!-- Bootstrap core CSS -->
     <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-
+	<script src="http://code.jquery.com/jquery-latest.js"></script>
+	<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <link href="../../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
 
@@ -31,6 +33,24 @@
       <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <script> 
+    $(function () {
+
+        (function ($) {
+            $.getUrlParam = function (name) {
+                var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+                var r = window.location.search.substr(1).match(reg);
+                if (r != null) return unescape(r[2]); return null;
+            }
+        })(jQuery);
+        var err = $.getUrlParam('error');
+	if (err == "yes") {
+		document.getElementById("alert").style.display="";
+	}
+    });
+
+
+</script>
   </head>
 	<style type="text/css">
 		body{background-color:#efeff4}
@@ -38,9 +58,16 @@
 	
   <body>
   <div class="container">  
+
 	<div class="row" style="margin-top: 20%;margin-left: 30px;">
 		<div class="col-md-6" style="border-right: 1px solid #ddd;">
 			<form class="well col-md-10" action="Login" method="get">
+				<div id="alert" class="alert alert-warning" style="display:none">
+				    <a href="#" class="close" data-dismiss="alert">
+				        &times;
+				    </a>
+				    <strong>警告！</strong>用户名密码错误，请重试！
+				</div>
 				<h3>用户登录</h3>
 				<div class="input-group input-group-md">
 					<span class="input-group-addon" id="sizing-addon1">
@@ -66,6 +93,9 @@
 			</ul>
 		</div>
 	</div>
+	
+
+
 </div>
 <!-- 	<div class="container">
 

@@ -57,8 +57,7 @@ public class Login extends HttpServlet {
 					response.addHeader("refresh", "1;url=user/index.jsp");
 				}
 			} else {
-				out.print("<script>alert(\"ÓÃ»§ÃûÃÜÂë´íÎó£¡\");</script>");
-				response.addHeader("refresh", "1;url=login.html");
+				response.sendRedirect("login.jsp?error=yes");
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
