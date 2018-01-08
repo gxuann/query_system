@@ -11,7 +11,7 @@
 <body>
 <br>
 <div class="col-lg-12">
-<form class="form-inline" action="../Select" method="post">
+<form class="form-inline" action="selectrs.jsp" method="post">
 	<input name="select" id="select" class="form-control" placeholder="请输入查询关键字" aria-describedby="sizing-addon1">
 	<button type="submit" class="btn btn-success btn-block form-control-select">提交</button>
 </form>
