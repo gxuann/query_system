@@ -14,13 +14,17 @@
 <h3>以下是查询结果：</h3>
 <hr>
 <%
-String select = request.getParameter("select");
 response.setCharacterEncoding("UTF-8");
 response.setContentType("text/html; charset=UTF-8");
-System.out.println(select);
+String selectdetail = request.getParameter("selectdetail");
+String select = request.getParameter("optionsRadios");
 DBAccess db = new DBAccess();
+System.out.println(select);
+System.out.println(selectdetail);
+
 db.Open();
-ResultSet rs = db.ExecuteQuery(String.format("select * from detail where flight='%s'", select));
+ResultSet rs = db.ExecuteQuery(String.format("select * from detail where ？=？", select, selectdetail));
+
 %>
  <table class="table table-hover">  
  		<thead>
