@@ -1,9 +1,8 @@
 package action;
 
-import db.*;
-
 import java.io.IOException;
-import java.io.PrintWriter;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -12,19 +11,19 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import java.sql.*;
+import db.DBAccess;
 
 /**
- * Servlet implementation class Login
+ * Servlet implementation class Select
  */
-@WebServlet("/Login")
-public class Login extends HttpServlet {
+@WebServlet("/Select")
+public class Select extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public Login() {
+    public Select() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -34,38 +33,16 @@ public class Login extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		String uname = request.getParameter("uname");
-		String upass = request.getParameter("upass");
+		String select = request.getParameter("select");
 		response.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html; charset=UTF-8");
+		System.out.println(select);
 		
 		DBAccess db = new DBAccess();
 		db.Open();
-		ResultSet rs = db.ExecuteQuery(String.format("select rid from users where uname='%s' and upass='%s'", uname, upass));
-		try {
-			if(rs.next()) {
-				
-				int rid = rs.getInt(1);
-				Cookie c = new Cookie("rid", rid+"");
-				response.addCookie(c);
-				Cookie c1 = new Cookie("uname", uname);
-				response.addCookie(c1);
-				if(rid==1) {
-					response.addHeader("refresh", "1;url=admin/index.jsp");
-				} else if(rid==2) {
-					response.addHeader("refresh", "1;url=user/index.jsp");
-				}
-			} else {
-				response.sendRedirect("login.jsp?error=yes");
-			}
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		ResultSet rs = db.ExecuteQuery(String.format("select * from detail where flight='%s'", select));
 		
 		db.Close();
-		
-		
 	}
 
 	/**
@@ -73,7 +50,7 @@ public class Login extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		this.doGet(request, response);
+		doGet(request, response);
 	}
 
 }
