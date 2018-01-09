@@ -26,7 +26,9 @@
 					%>
 				</h3>
 			</h1>
-			<hr>
+			<hr><br><br>
+<h4>你可以在下面的表单中添加服务器通知。</h4>			
+<hr>
 <div class="col-md-6">			
 <form class="form-horizontal" role="form" action="informrs.jsp" method="get">
   <div class="form-group">

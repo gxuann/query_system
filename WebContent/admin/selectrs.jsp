@@ -17,8 +17,7 @@ String selectdetail = request.getParameter("selectdetail");
 String select = request.getParameter("select");
 response.setCharacterEncoding("UTF-8");
 response.setContentType("text/html; charset=UTF-8");
-System.out.println(select);
-System.out.println(selectdetail);
+
 Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
 
 Connection con = DriverManager.getConnection("jdbc:sqlserver://localhost:1433;databaseName=web;user=sa;password=nicai");

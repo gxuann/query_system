@@ -58,7 +58,7 @@
 
 	<div class="row" style="margin-top: 20%;margin-left: 30px;">
 		<div class="col-md-6" style="border-right: 1px solid #ddd;">
-			<form class="well col-md-10" action="Login" method="get">
+			<form class="well col-md-10" action="Login" method="post">
 				<div id="alert" class="alert alert-warning" style="display:none">
 				    <a href="#" class="close" data-dismiss="alert">
 				        &times;

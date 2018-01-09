@@ -46,7 +46,7 @@ if (i == 1) {
 <div class="panel panel-info">
     <div class="panel-heading">
         <h3 class="panel-title">
-        	数据插入成功！，以下是详细信息。
+        	数据插入成功！以下是详细信息。
         </h3>
     </div>
     <div class="panel-body">
