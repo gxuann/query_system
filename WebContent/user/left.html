@@ -1,0 +1,76 @@
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=8" >
+<title>菜单</title>
+<link rel="stylesheet" type="text/css" href="Assets/css/reset.css"/>
+<link rel="stylesheet" type="text/css" href="Assets/css/common.css"/>
+<script type="text/javascript" src="Assets/js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	$('.sidenav li').click(function(){
+		$(this).siblings('li').removeClass('now');
+		$(this).addClass('now');
+	});
+	
+	$('.erji li').click(function(){
+		$(this).siblings('li').removeClass('now_li');
+		$(this).addClass('now_li');
+	});
+	
+	var main_h = $(window).height();
+	$('.sidenav').css('height',main_h+'px');
+})
+</script>
+</head>
+
+<body>
+<div id="left_ctn">
+    <ul class="sidenav">
+        <li class="now">
+            <div class="nav_m">
+                <span><a>首页</a></span>
+                <i>&nbsp;</i>
+            </div>
+            <ul class="erji">
+                <li class="now_li">
+                    <span><a href="inform.jsp" target="main">通知&其他</a></span>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <div class="nav_m">
+                <span><a>操作</a></span>
+                <i>&nbsp;</i>
+            </div>
+            <ul class="erji">
+                <li>
+                    <span><a href="select.jsp" target="main">查询</a></span>
+                </li>
+                <li>
+                    <span><a href="noaccess.jsp" target="main">更新</a></span>
+                </li>
+                <li>
+                    <span><a href="noaccess.jsp" target="main">删除</a></span>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <div class="nav_m">
+                <span><a>账号管理</a></span>
+                <i>&nbsp;</i>
+            </div>
+            <ul class="erji">
+                <li>
+                    <span><a href="changepass.jsp" target="main">修改密码</a></span>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <div class="nav_m">
+                <span><a href="logout.jsp" target="main">注销</a></span>
+            </div>
+        </li>
+    </ul>
+</div>
+</body>
+</html>

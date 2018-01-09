@@ -1,3 +1,4 @@
+<%@page import="util.UserUtil"%>
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -9,6 +10,18 @@
 <link href="../css/select.css" rel="stylesheet">
 </head>
 <body>
+<%
+	String uname = UserUtil.getuname(request);
+	String rid = UserUtil.getRid(request);
+	if(uname == null || rid == null){
+		out.println("请先<a href='../login.jsp'>登录</a>");
+		return;
+	}
+	if(!rid.equals("1")) {
+		out.println("请先<a href='../login.jsp'>以管理员身份登录</a>");
+		return;
+	}
+%>
 <br>
 <div class="col-lg-12">
 <form class="form-inline" action="deleters.jsp" method="get">

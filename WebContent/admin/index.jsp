@@ -21,14 +21,13 @@ body
 	String uname = UserUtil.getuname(request);
 	String rid = UserUtil.getRid(request);
 	if(uname == null || rid == null){
-		out.println("请先<a href='login.html'>登录</a>");
+		out.println("请先<a href='../login.jsp'>登录</a>");
 		return;
 	}
 	if(!rid.equals("1")) {
-		out.println("请先<a href='login.html'>以管理员身份登录</a>");
+		out.println("请先<a href='../login.jsp'>以管理员身份登录</a>");
 		return;
 	}
-
 %>
 </body>
 </noframes>

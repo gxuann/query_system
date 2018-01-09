@@ -1,3 +1,4 @@
+<%@page import="util.UserUtil"%>
 <%@page import="java.sql.*"%>
 <%@page import="java.io.*"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -10,6 +11,18 @@
 <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 </head>
 <body>
+<%
+	String uname = UserUtil.getuname(request);
+	String rid = UserUtil.getRid(request);
+	if(uname == null || rid == null){
+		out.println("请先<a href='../login.jsp'>登录</a>");
+		return;
+	}
+	if(!rid.equals("1")) {
+		out.println("请先<a href='../login.jsp'>以管理员身份登录</a>");
+		return;
+	}
+%>
 <%
 String company = request.getParameter("company");
 String flight = request.getParameter("flight");
@@ -116,6 +129,8 @@ if (i == 1) {
 </div>
 <%
 }
+sta.close();
+con.close();
 %>
 <hr>
 <button class="btn btn-info" onclick="javascript:window.location.href='update.jsp' ">返回</button>

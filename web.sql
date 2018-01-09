@@ -18,12 +18,13 @@ rid int references roles(r_id),
 )
 
 insert into users values('admin','admin',1)
+insert into users values('admin2','admin',1)
 insert into users values('xiaohong','123456',2)
-
-delete from users where rid=2
-
  
 select * from users
+select uname,upass from users where uname='admin'
+
+
 
 create table detail(
 company nvarchar(16), 
@@ -54,5 +55,11 @@ insert into detail values('长安航空','9H8308','海口','庆阳')
 select * from detail where flight = 'GS7815'
 select * from detail
 
+create table inform(
+num varchar(32),
+informdetail nvarchar(255),
+)
 
+insert into inform values(1,'管理员可以增加服务器通知了。')
 
+select * from inform
