@@ -35,7 +35,6 @@
     <![endif]-->
     <script> 
     $(function () {
-
         (function ($) {
             $.getUrlParam = function (name) {
                 var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
@@ -48,8 +47,6 @@
 		document.getElementById("alert").style.display="";
 	}
     });
-
-
 </script>
   </head>
 	<style type="text/css">

@@ -11,8 +11,8 @@
 <body>
 <br>
 <div class="col-lg-12">
-<form class="form-inline">
-	<input type="text" name="select" id="select" class="form-control" placeholder="请输入要删除的航班号" aria-describedby="sizing-addon1">
+<form class="form-inline" action="deleters.jsp" method="get">
+	<input type="text" name="delflight" id="delflight" class="form-control" placeholder="请输入要删除的航班号" aria-describedby="sizing-addon1">
 	<button type="submit" class="btn btn-danger btn-block form-control-select">提交</button><br>
 </form>
 <br>
