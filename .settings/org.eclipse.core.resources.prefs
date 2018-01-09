@@ -2,3 +2,5 @@ eclipse.preferences.version=1
 encoding//WebContent/admin/index.jsp=UTF-8
 encoding//WebContent/admin/logout.jsp=UTF-8
 encoding//WebContent/admin/select.jsp=UTF-8
+encoding//WebContent/admin/update.jsp=UTF-8
+encoding//WebContent/admin/updaters.jsp=UTF-8

@@ -52,5 +52,7 @@ insert into detail values('深圳航空','ZH9969','上海','台州')
 insert into detail values('长安航空','9H8308','海口','庆阳')
 
 select * from detail where flight = 'GS7815'
+select * from detail
+
 
 
