@@ -47,9 +47,9 @@ public class Register extends HttpServlet {
 		UserManager um = new UserManager();
 		int i = um.AddUser(u);
 		if(i>0) {
-			out.println("<script>alert('恭喜你，注册成功！请返回登录！'); window.location='login.html';</script>");
+			out.println("<script>alert('恭喜你，注册成功！请返回登录！'); window.location='login.jsp';</script>");
 		} else {
-			out.println("<script>alert('抱歉，遇到未知错误，请重新注册！'); window.location='register.html'; </script>");
+			out.println("<script>alert('抱歉，遇到未知错误，请重新注册！'); window.location='register.jsp'; </script>");
 		}
 	}
 
