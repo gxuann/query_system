@@ -14,23 +14,11 @@
 <form class="form-inline" action="selectrs.jsp" method="get">
 	<input name="selectdetail" id="selectdetail" class="form-control" placeholder="请输入查询关键字" aria-describedby="sizing-addon1">
 	<button type="submit" class="btn btn-success btn-block form-control-select">提交</button><br>
-	<label class="radio">
-	<input type="radio" name="optionsRadios" id="optionsRadios1" value="company" checked>
-		航空公司
-	</label>
-	<label class="radio">
-	<input type="radio" name="optionsRadios" id="optionsRadios1" value="flight">
-		航班号
-	</label>
-	<label class="radio">
-	<input type="radio" name="optionsRadios" id="optionsRadios2" value="start">
-		出发地
-	</label>
-	<label class="radio">
-	<input type="radio" name="optionsRadios" id="optionsRadios2" value="finish">
-		目的地
-	</label>
 </form>
+<br>
+<blockquote>
+  <p style="font-size:13px;">查询条件支持：航空公司、航班号、出发地或目的地。</p>
+</blockquote>
 <hr>
 </div>
 </body>

@@ -13,9 +13,14 @@
 <div class="col-lg-12">
 <form class="form-inline">
 	<input type="text" name="select" id="select" class="form-control" placeholder="请输入要删除的航班号" aria-describedby="sizing-addon1">
-	<buttom id="submit" type="submit" class="btn btn-danger btn-block form-control-select">提交</buttom>
+	<button type="submit" class="btn btn-danger btn-block form-control-select">提交</button><br>
 </form>
+<br>
+<blockquote>
+  <p style="font-size:13px;">注意！仅支持航班号删除</p>
+</blockquote>
 <hr>
+
 </div>
 </body>
 </html>

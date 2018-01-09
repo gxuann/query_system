@@ -14,17 +14,21 @@
 <h3>以下是查询结果：</h3>
 <hr>
 <%
+String selectdetail = request.getParameter("selectdetail");
+String select = request.getParameter("select");
 response.setCharacterEncoding("UTF-8");
 response.setContentType("text/html; charset=UTF-8");
-String selectdetail = request.getParameter("selectdetail");
-String select = request.getParameter("optionsRadios");
-DBAccess db = new DBAccess();
 System.out.println(select);
 System.out.println(selectdetail);
+Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
 
-db.Open();
-ResultSet rs = db.ExecuteQuery(String.format("select * from detail where ？=？", select, selectdetail));
-
+Connection con = DriverManager.getConnection("jdbc:sqlserver://localhost:1433;databaseName=web;user=sa;password=nicai");
+PreparedStatement sta = con.prepareStatement("select * from detail where (company=? or flight=? or start=? or finish=?)");
+sta.setString(1, selectdetail);
+sta.setString(2, selectdetail);
+sta.setString(3, selectdetail);
+sta.setString(4, selectdetail);
+ResultSet rs = sta.executeQuery();
 %>
  <table class="table table-hover">  
  		<thead>
@@ -83,7 +87,8 @@ ResultSet rs = db.ExecuteQuery(String.format("select * from detail where ？=？
         %>  
     </table>  
 <%
-db.Close();
+sta.close();
+sta.close();
 %>
 <hr>
 <button class="btn btn-info" onclick="javascript:window.location.href='select.jsp' ">返回</button>
