@@ -35,7 +35,7 @@ body
   <frame src="top.html" name="topFrame" scrolling="no">
   <frameset cols="225,*" name="btFrame" frameborder="NO" border="0" framespacing="0">
     <frame src="left.html" noresize name="menu" scrolling="yes">
-    <frame src="inform.jsp" class="frame_r" noresize name="main" scrolling="yes">
+    <frame src="inform.jsp" class="frame_r" noresize name="main" scrolling="yes" >
   </frameset>
 </frameset>
 
