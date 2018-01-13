@@ -33,7 +33,6 @@ public class Login extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		String uname = request.getParameter("uname");
 		String upass = request.getParameter("upass");
 		response.setCharacterEncoding("UTF-8");
@@ -59,13 +58,10 @@ public class Login extends HttpServlet {
 				response.sendRedirect("login.jsp?error=yes");
 			}
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
 		db.Close();
-		
-		
 	}
 
 	/**
